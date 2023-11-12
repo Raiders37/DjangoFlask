@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content  %}
+
+<div class="mt-0 p-5 bg-primary text-white rounded">
+    <div class="container">
+      <h2 class="display-3">Prédiction de la mortalité par hépatite</h2>
+      <p>à l'aide de l'apprentissage automatique </p>
+      <p><a class="btn btn-info waves-effect btn-lg" href="/" role="button">Rafraîchir &raquo;</a></p>
+    </div>
+  </div>
+<br/>
+
+
+<div class="container">
+    <div class="col-md-6 offset-md-2">
+        <div class="row mt-4">
+            <div class="card shadow">
+                <div class="mt-4 text-center">
+                    <h1>Vos infos</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <input class="btn btn-info" type="submit" value="Prédire">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

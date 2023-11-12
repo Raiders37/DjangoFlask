@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% block title %}All Prediction{% endblock %}
+
+{% block content  %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">test_score</th>
+                    <th scope="col">interview_score</th>
+                    <th scope="col">Prediction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in predicted_sports %}
+                  <tr>
+                    <td>{{ data.date }}</td>
+                    <th scope="row">{{ data.name }}</th>
+                    <td>{{ data.experience }}</td>
+                    <td>{{ data.test_score }}</td>
+                    <td>{{ data.interview_score }}</td>
+                    <td>{{ data.predictions }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

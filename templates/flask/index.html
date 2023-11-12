@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+
+
+
+{% block content %}
+
+<center>
+
+<h1 style="color:rgb(201, 201, 221);"> Aujourd'hui nous sommes le :{{ day }} {{ month }} {{ year }} <br/><br/>
+Bienvenue sur le site de<br/><br/>
+déploiement d'une application machine learning<br/><br/>
+
+Choisir votre model<br/><br/>
+
+</h1>
+
+{{ cal|safe }}
+
+<br/>
+
+{{ now }}
+<br/>
+
+{{ current_year }}
+<br/>
+{{ time }}
+<br/>
+
+</center>
+
+{% endblock %}
