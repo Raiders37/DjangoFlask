@@ -100,12 +100,12 @@ WSGI_APPLICATION = '_server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 
@@ -116,10 +116,10 @@ DATABASES = {
 #         conn_max_age=600)           
 #     }
 
-# DATABASES = {
+DATABASES = {
 
-# "default" : dj_database_url.config(default= 'postgresql://ml_user:ml2023@104.163.136.253:5432/flask_db')
-# }
+"default" : dj_database_url.config(default= 'postgresql://ml_user:ml2023@104.163.136.253:5432/flask_db')
+}
 
 
 # Password validation
