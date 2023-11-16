@@ -112,7 +112,7 @@ WSGI_APPLICATION = '_server.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(        
                
-        default='postgres://hepatite_user:wfCslpr2USgYERVQd26yxJ2JLRFRLuWc@dpg-cl7opaavokcc73aogls0-a/hepatite_db', 
+        default='postgres://hepatite_user:wfCslpr2USgYERVQd26yxJ2JLRFRLuWc@dpg-cl7opaavokcc73aogls0-a.oregon-postgres.render.com/hepatite_db', 
         conn_max_age=600)           
     }
 
