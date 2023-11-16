@@ -14,7 +14,7 @@ from django_tables2.tables import Table
 def index(request, year = datetime.now().year, month = datetime.now().strftime('%B'), day = datetime.now().strftime('%d')):
     
     month = month.title()
-    #convert month from namr to number
+    #convert month from name to number
     month_number = list(calendar.month_name).index(month)
     month_number = int(month_number)
     day = day.title()

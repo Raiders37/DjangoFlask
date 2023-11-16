@@ -23,6 +23,23 @@ YES_NO = (
     (1, 'Non'),
 )
 
+# prediction_label = (
+#      (1, 'Die'),
+#      (2, 'Live')
+# )
+
+prediction_label = (
+     ('Die', 1),
+     ('Live', 2)
+)
+
+#prediction_label = {"Die":1,"Live":2}
+
+# def get_key(val,my_dict):
+# 	for key ,value in my_dict.items():
+# 		if val == value:
+# 			return key
+
 ######################################################################################
 
 class Data(models.Model):
@@ -51,6 +68,7 @@ class Data(models.Model):
 ######################################################################################
 
 class Hepatite_data(models.Model):
+
     name = models.CharField(max_length=100, null=True)
     age = models.PositiveIntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(99)], default=10)
@@ -74,6 +92,7 @@ class Hepatite_data(models.Model):
     histology = models.PositiveIntegerField(choices=YES_NO, default=0)
     
     predictions = models.PositiveIntegerField(null=True)
+
     date = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
@@ -84,6 +103,9 @@ class Hepatite_data(models.Model):
               self.varices, self.ascite, self.bilirubine,
               self. phostate, self.sgot, self.albumin,
               self.protime, self.histology]])
+        
+
+
         return super().save(*args, *kwargs)
 
     class Meta:

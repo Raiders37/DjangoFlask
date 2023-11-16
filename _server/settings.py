@@ -109,17 +109,17 @@ WSGI_APPLICATION = '_server.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': dj_database_url.config(        
-#                
-#         default='postgresql://ml_user:ml2023@104.163.136.253:5432/ml_db', 
-#         conn_max_age=600)           
-#     }
-
 DATABASES = {
+    'default': dj_database_url.config(        
+               
+        default='postgres://hepatite_user:wfCslpr2USgYERVQd26yxJ2JLRFRLuWc@dpg-cl7opaavokcc73aogls0-a/hepatite_db', 
+        conn_max_age=600)           
+    }
 
-"default" : dj_database_url.config(default= 'postgresql://ml_user:ml2023@104.163.136.253:5432/flask_db')
-}
+# DATABASES = {
+
+# "default" : dj_database_url.config(default= 'postgresql://ml_user:ml2023@104.163.136.253:5432/flask_db')
+# }
 
 
 # Password validation

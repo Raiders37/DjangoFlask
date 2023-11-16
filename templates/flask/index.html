@@ -1,8 +1,6 @@
 {% extends 'base/base.html' %}
 
 
-
-
 {% block content %}
 
 <center>
@@ -13,10 +11,20 @@ déploiement d'une application machine learning<br/><br/>
 
 Choisir votre model<br/><br/>
 
+
+<a href="{% url 'salaire-index' %}" >
+    <button type="button" class="btn btn-primary btn-lg">Salaire</button>
+ </a>  
+
+ <a href="{% url 'hepatite-index' %}" >
+<button type="button" class="btn btn-success btn-lg">Hépatite</button>
+</a>  
+<br><br><br>
+
+<div class="container">
+<h1>
+{{ cal | safe }}
 </h1>
-
-{{ cal|safe }}
-
 <br/>
 
 {{ now }}
@@ -26,7 +34,7 @@ Choisir votre model<br/><br/>
 <br/>
 {{ time }}
 <br/>
-
+</div>
 </center>
 
 {% endblock %}
