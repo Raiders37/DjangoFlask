@@ -4,7 +4,7 @@
 {% block content  %}
 <div class="container">
     <div class="row mt-4">
-        <div class="col-md-8 offset-md-2">
+        <div class="col">
             <table class="table">
                 <thead>
                   <tr>
@@ -12,7 +12,8 @@
                     <th scope="col">Name</th>
                     <th scope="col">Sexe</th>
                     <th scope="col">Age</th>
-                    <th scope="col">Prediction</th>
+                    <th scope="col">Pred</th>
+                    <th scope="col">Probabilite</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -20,9 +21,10 @@
                   <tr>
                     <td>{{ data.date }}</td>
                     <th scope="row">{{ data.name }}</th>
-                    <td>{{ data.sex }}</td>
+                    <td>{{ data.sex2 }}</td>
                     <td>{{ data.age }}</td>
-                    <td>{{ data.predictions }}</td>
+                    <td>{{ data.pred }}</td>
+                    <td>{{ data.pred_probalility_score }}</td>
                   </tr>
                   {% endfor %}
                 </tbody>

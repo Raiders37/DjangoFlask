@@ -18,27 +18,11 @@ GENDER = (
     (1, 'Male'),
 )
 
+
+
 YES_NO = (
     (0, 'Oui'),
-    (1, 'Non'),
-)
-
-# prediction_label = (
-#      (1, 'Die'),
-#      (2, 'Live')
-# )
-
-prediction_label = (
-     ('Die', 1),
-     ('Live', 2)
-)
-
-#prediction_label = {"Die":1,"Live":2}
-
-# def get_key(val,my_dict):
-# 	for key ,value in my_dict.items():
-# 		if val == value:
-# 			return key
+    (1, 'Non'),)
 
 ######################################################################################
 
@@ -73,6 +57,7 @@ class Hepatite_data(models.Model):
     age = models.PositiveIntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(99)], default=10)
     sex = models.PositiveIntegerField(choices=GENDER, default=0)
+    sex2 = models.CharField(max_length=7, default='N/A')
     steroide = models.PositiveIntegerField(choices=YES_NO, default=0)
     antiviraux = models.PositiveIntegerField(choices=YES_NO, default=0)
     fatigue = models.PositiveIntegerField(choices=YES_NO, default=0)
@@ -92,7 +77,8 @@ class Hepatite_data(models.Model):
     histology = models.PositiveIntegerField(choices=YES_NO, default=0)
     
     predictions = models.PositiveIntegerField(null=True)
-
+    pred = models.CharField(max_length=5, default='N/A')
+    pred_probalility_score = models.CharField(max_length=50, default='N/A')
     date = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
@@ -104,6 +90,20 @@ class Hepatite_data(models.Model):
               self. phostate, self.sgot, self.albumin,
               self.protime, self.histology]])
         
+        if self.sex == 1:
+            self.sex2 = 'Male'
+        else:
+            self.sex2 = "Female"
+
+        if self.predictions == 1:
+            self.pred = 'Die'
+        else:
+            self.pred = "Live"
+
+        single_data = [self.age,self.sex,self.steroide,self.antiviraux,self.fatigue,self.naevi,self.ascite,self.varices,self.bilirubine,self.phostate,self.sgot,self.albumin,self.protime,self.histology]
+        numerical_encoded_data = [ float(int(x)) for x in single_data ]
+        pred_prob = ml_model.predict_proba(np.array(numerical_encoded_data).reshape(1,-1))
+        self.pred_probalility_score = {"Die":round(pred_prob[0][0]*100,2),"Live":round(pred_prob[0][1]*100,2)}
 
 
         return super().save(*args, *kwargs)
