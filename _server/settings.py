@@ -110,7 +110,7 @@ WSGI_APPLICATION = '_server.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://hepatite_user:wfCslpr2USgYERVQd26yxJ2JLRFRLuWc@dpg-cl7opaavokcc73aogls0-a.oregon-postgres.render.com/hepatite_db')
+    'default': dj_database_url.parse('postgres://hepatite_user:gjrOr6TJriiVWV0oKoo8scjrWcjwxibP@dpg-clbd3d6nt67s73adeu3g-a.oregon-postgres.render.com/hepatite_db_hfls')
 }
 
 
