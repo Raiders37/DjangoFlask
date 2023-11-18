@@ -12,7 +12,6 @@ dj-database-url==2.1.0
 Django==4.2.2
 django-bootstrap5==23.3
 django-crispy-forms==2.1
-django-tables2==2.6.0
 djangorestframework==3.14.0
 executing==1.2.0
 fonttools==4.44.0

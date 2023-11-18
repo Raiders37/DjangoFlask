@@ -6,7 +6,6 @@ import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
 import csv
-from django_tables2.tables import Table
 
 # Create your views here.
 

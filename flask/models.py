@@ -90,15 +90,9 @@ class Hepatite_data(models.Model):
               self. phostate, self.sgot, self.albumin,
               self.protime, self.histology]])
         
-        if self.sex == 1:
-            self.sex2 = 'Male'
-        else:
-            self.sex2 = "Female"
+        self.sex2 = "Male" if self.sex == 1 else "Female"
 
-        if self.predictions == 1:
-            self.pred = 'Die'
-        else:
-            self.pred = "Live"
+        self.pred = "Die" if self.predictions == 1 else "Live"
 
         single_data = [self.age,self.sex,self.steroide,self.antiviraux,self.fatigue,self.naevi,self.ascite,self.varices,self.bilirubine,self.phostate,self.sgot,self.albumin,self.protime,self.histology]
         numerical_encoded_data = [ float(int(x)) for x in single_data ]

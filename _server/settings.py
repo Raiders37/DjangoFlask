@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     'flask',
     'crispy_forms',
     "crispy_bootstrap5",
-    #'django_bootstrap5',
-    "django_tables2"
+    
 ]
 
 MIDDLEWARE = [
@@ -110,25 +109,14 @@ WSGI_APPLICATION = '_server.wsgi.application'
 # }
 
 DATABASES = {
+
     'default': dj_database_url.parse('postgres://hepatite_user:gjrOr6TJriiVWV0oKoo8scjrWcjwxibP@dpg-clbd3d6nt67s73adeu3g-a.oregon-postgres.render.com/hepatite_db_hfls')
 }
 
 
-# DATABASES = {
-#     'default': dj_database_url.config(        
-               
-#         default='postgres://hepatite_user:wfCslpr2USgYERVQd26yxJ2JLRFRLuWc@dpg-cl7opaavokcc73aogls0-a.oregon-postgres.render.com/hepatite_db', 
-#         conn_max_age=600)           
-#     }
-
-# DATABASES = {
-
-# "default" : dj_database_url.config(default= 'postgresql://ml_user:ml2023@104.163.136.253:5432/flask_db')
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -182,11 +170,6 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
-
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
