@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flask',
+    'pipeline',
     'crispy_forms',
     "crispy_bootstrap5",
     
@@ -64,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = '_server.urls'
+
+
 
 
 

@@ -21,6 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('flask.urls')),
+    path('pipeline/', include('pipeline.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
