@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m+&s*!v%vw6_@5n1=zi@_8im1o#$jtsxy8!0s(smifvh*rw70+'
+#SECRET_KEY = 'django-insecure-m+&s*!v%vw6_@5n1=zi@_8im1o#$jtsxy8!0s(smifvh*rw70+'
 
 #SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
@@ -111,11 +113,16 @@ WSGI_APPLICATION = '_server.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+
+#     'default': dj_database_url.parse('postgres://hepatite_user:gjrOr6TJriiVWV0oKoo8scjrWcjwxibP@dpg-clbd3d6nt67s73adeu3g-a.oregon-postgres.render.com/hepatite_db_hfls')
+# }
+
+
 DATABASES = {
 
-    'default': dj_database_url.parse('postgres://hepatite_user:gjrOr6TJriiVWV0oKoo8scjrWcjwxibP@dpg-clbd3d6nt67s73adeu3g-a.oregon-postgres.render.com/hepatite_db_hfls')
-}
-
+    'default': os.getenv('DJ_DATABASE_URL') 
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
