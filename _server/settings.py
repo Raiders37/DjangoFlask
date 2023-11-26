@@ -118,10 +118,12 @@ WSGI_APPLICATION = '_server.wsgi.application'
 #     'default': dj_database_url.parse('postgres://hepatite_user:gjrOr6TJriiVWV0oKoo8scjrWcjwxibP@dpg-clbd3d6nt67s73adeu3g-a.oregon-postgres.render.com/hepatite_db_hfls')
 # }
 
+database_url = os.getenv('DJ_DATABASE_URL') 
+db_config = dj_database_url.parse(database_url)
 
 DATABASES = {
 
-    'default': os.getenv('DJ_DATABASE_URL') 
+    'default': db_config
     }
 
 # Password validation
